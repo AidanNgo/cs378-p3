@@ -1,7 +1,6 @@
 import './App.css';
-import MenuItem from './components/MenuItem';
-import MenuHeader from './components/MenuHeader';
-
+import React, { useState } from 'react';
+import MenuAll from './components/MenuAll';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -14,6 +13,7 @@ const menuItems = [
     description: 'Japanese dumplings, dumpling sauce',
     imageName: 'gyoza.png',
     price: 5.99,
+    count: 0,
   },
   {
     id: 2,
@@ -21,6 +21,7 @@ const menuItems = [
     description: 'Japanese rice rolls, soy sauce',
     imageName: 'sushi.png',
     price: 6.99,
+    count: 0,
   },
   {
     id: 3,
@@ -28,6 +29,7 @@ const menuItems = [
     description: 'Japanese noodle soup, pork broth',
     imageName: 'ramen.png',
     price: 7.99,
+    count: 0,
   },
   {
     id: 4,
@@ -35,6 +37,7 @@ const menuItems = [
     description: 'Japanese green tea cake, culinary-grade',
     imageName: 'matcha-cake.png',
     price: 4.99,
+    count: 0,
   },
   {
     id: 5,
@@ -42,20 +45,7 @@ const menuItems = [
     description: 'Japanese rice cake, various flavors',
     imageName: 'mochi.png',
     price: 3.99,
-  },
-  {
-    id: 6,
-    title: 'Yakitori',
-    description: 'Japanese skewered chicken, charcoal grilled',
-    imageName: 'yakitori.png',
-    price: 2.99,
-  },
-  {
-    id: 7,
-    title: 'Takoyaki',
-    description: 'Japanese octopus balls, mayonnaise, bonito flakes',
-    imageName: 'takoyaki.png',
-    price: 5.99,
+    count: 0,
   },
   {
     id: 8,
@@ -63,13 +53,7 @@ const menuItems = [
     description: 'Japanese raw fish, soy sauce',
     imageName: 'sashimi.png',
     price: 8.99,
-  },
-  {
-    id: 9,
-    title: 'Okonomiyaki',
-    description: 'Japanese savory pancake',
-    imageName: 'okonomiyaki.png',
-    price: 6.99,
+    count: 0,
   },
   {
     id: 10,
@@ -77,35 +61,16 @@ const menuItems = [
     description: 'Japanese curry with fried pork, pickled radish',
     imageName: 'katsu-curry.png',
     price: 9.99,
+    count: 0,
   }
 ];
-
 
 function App() {
   return (
     <div>
-      
-      <div>
-        <MenuHeader />
-      </div>
-
-     
-     
-      <div className="row" id="menu">
-        {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        {menuItems.map((item) => (
-
-          <MenuItem 
-          title={item.title}
-          description={item.description} 
-          imageName={item.imageName} 
-          price={item.price} 
-          />
-
-          ))}
- 
-      </div>
-
+      <MenuAll
+      menuItems={menuItems}
+      />
     </div>
   );
 }
