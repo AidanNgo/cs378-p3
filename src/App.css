@@ -1,0 +1,35 @@
+/* 
+  Style your elements by creating CSS classes here.
+  Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
+*/
+
+#cafe-icon{
+  width: 30vw;
+  max-width: 260px;
+  min-width: 175px;
+  margin-top: 1.2%;
+}
+
+#motto-one{
+  color: orangered;
+  font-weight: 600;
+  font-size: 1.3vh;
+  font-family: Playwrite IN;
+  max-height: 300px;
+  min-height: 10px;
+  text-wrap-mode: nowrap;
+  margin-top: 29px;
+  margin-bottom: -2px;
+}
+
+#motto-two{
+  color: darkslateblue;
+  font-weight: 600;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  text-wrap-mode: nowrap;
+}
+
+#menu{
+  margin-top: 3vw;
+}

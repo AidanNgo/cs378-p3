@@ -1,0 +1,47 @@
+.menu-item{
+    margin: 20px;
+}
+
+.menu-image{
+    width: 30vw;
+    border-radius: 20px;
+    max-width: 110px;
+    min-width: 90px;
+}
+
+.food-name{
+    font-weight: bold;
+    color: maroon;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.food-description{
+    margin-top: 2px;
+    font-size: 11px;
+    color: gray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.price{
+    color: maroon;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.add-button{
+    border-radius: 20px;
+    font-size: 10px;
+    margin: 0;
+    padding: 2px 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.45);
+}
