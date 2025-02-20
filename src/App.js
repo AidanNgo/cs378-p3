@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import MenuAll from './components/MenuAll';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
@@ -12,7 +12,7 @@ const menuItems = [
     title: 'Gyoza',
     description: 'Japanese dumplings, dumpling sauce',
     imageName: 'gyoza.png',
-    price: 5.99,
+    price: 6,
     count: 0,
   },
   {
@@ -20,7 +20,7 @@ const menuItems = [
     title: 'Sushi',
     description: 'Japanese rice rolls, soy sauce',
     imageName: 'sushi.png',
-    price: 6.99,
+    price: 7,
     count: 0,
   },
   {
@@ -28,39 +28,23 @@ const menuItems = [
     title: 'Ramen',
     description: 'Japanese noodle soup, pork broth',
     imageName: 'ramen.png',
-    price: 7.99,
+    price: 8,
     count: 0,
   },
   {
     id: 4,
-    title: 'Matcha Cake',
-    description: 'Japanese green tea cake, culinary-grade',
-    imageName: 'matcha-cake.png',
-    price: 4.99,
+    title: 'Sashimi',
+    description: 'Japanese raw fish, soy sauce',
+    imageName: 'sashimi.png',
+    price: 9,
     count: 0,
   },
   {
     id: 5,
-    title: 'Mochi',
-    description: 'Japanese rice cake, various flavors',
-    imageName: 'mochi.png',
-    price: 3.99,
-    count: 0,
-  },
-  {
-    id: 8,
-    title: 'Sashimi',
-    description: 'Japanese raw fish, soy sauce',
-    imageName: 'sashimi.png',
-    price: 8.99,
-    count: 0,
-  },
-  {
-    id: 10,
     title: 'Katsu Curry',
     description: 'Japanese curry with fried pork, pickled radish',
     imageName: 'katsu-curry.png',
-    price: 9.99,
+    price: 10,
     count: 0,
   }
 ];

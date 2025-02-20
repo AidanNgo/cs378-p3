@@ -5,40 +5,60 @@ import MenuHeader from './MenuHeader';
 import BottomSummary from './BottomSummary';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const MenuAll = ({ menuItems: initialMenuItems }) => {
+    const [menuItems, setMenuItems] = useState(initialMenuItems);
+    const [totalPrice, setTotalPrice] = useState(0);
 
+    const updateMenuItemCount = (itemId, countChange, priceChange) => {
+        setMenuItems(prevMenuItems =>
+            prevMenuItems.map(item =>
+                item.id === itemId
+                    ? { ...item, count: Math.max(0, item.count + countChange) }
+                    : item
+            )
+        );
+        setTotalPrice(prevTotal => Math.max(0, prevTotal + priceChange));
+    };
 
-const MenuAll = ({menuItems}) => {
-
-    const [totalCount, setTotalCount] = useState(0);
+    const clearAll = () => {
+        setMenuItems(prevMenuItems =>
+            prevMenuItems.map(item => ({ ...item, count: 0 }))
+        );
+        setTotalPrice(0);
+    };
 
     return (
         <div>
-        
-        <div>
             <MenuHeader />
-        </div>
-        
-        <div className="row" id="menu">
-            {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-            {menuItems.map((item) => (
 
-            <MenuItem 
-            title={item.title}
-            description={item.description} 
-            imageName={item.imageName} 
-            price={item.price}
-            count ={item.count}
-            />
+            <div className="row" id="menu">
+                {menuItems.map((item) => (
+                    <MenuItem
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        description={item.description}
+                        imageName={item.imageName}
+                        price={item.price}
+                        count={item.count}
+                        setTotalPrice={setTotalPrice}
+                        updateMenuItemCount={updateMenuItemCount}
+                    />
+                ))}
+            </div>
 
-            ))}
-    
-        </div>
-
-        <div>
             <BottomSummary 
-            totalCount={totalCount}
+                totalPrice={totalPrice}
+                clearAll={clearAll}
+                menuItems={menuItems}
             />
-        </div>
+
+            {/* <h2>Updated Counts:</h2>
+            <ul>
+                {menuItems.map(item => (
+                    <li key={item.id}>{item.title}: {item.count}</li>
+                ))}
+            </ul> */}
 
         </div>
     );
